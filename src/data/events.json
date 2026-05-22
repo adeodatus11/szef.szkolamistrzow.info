@@ -1,0 +1,385 @@
+[
+  {
+    "date": "2025-09-01",
+    "title": "Rozpoczęcie roku szkolnego 2025/2026",
+    "type": "rok szkolny",
+    "audience": "Technikum, BSI, BS II",
+    "description": "Pierwszy dzień roku szkolnego 2025/2026."
+  },
+  {
+    "date": "2025-09-03",
+    "title": "Zebrania dla rodziców klas pierwszych",
+    "type": "zebrania",
+    "audience": "klasy pierwsze",
+    "description": "Zebranie dla rodziców klas pierwszych oraz zebrania klas pierwszych technikum."
+  },
+  {
+    "date": "2025-09-10",
+    "title": "Zebrania z rodzicami pozostałych klas",
+    "type": "zebrania",
+    "audience": "pozostałe klasy",
+    "description": "Zebrania organizacyjne dla rodziców pozostałych klas."
+  },
+  {
+    "date": "2025-09-26",
+    "title": "Święto Szkoły i Jubileusz Szkoły",
+    "type": "dzień wolny",
+    "audience": "społeczność szkoły",
+    "description": "Dzień wolny od zajęć dydaktycznych."
+  },
+  {
+    "date": "2025-10-13",
+    "title": "Uroczysta akademia z okazji DEN",
+    "type": "wydarzenia",
+    "audience": "społeczność szkoły",
+    "description": "15:30 uroczysta akademia z okazji Dnia Edukacji Narodowej; 18:00 uroczysta kolacja w hotelu Mercure Wrocław."
+  },
+  {
+    "date": "2025-10-14",
+    "title": "Dzień Edukacji Narodowej",
+    "type": "dzień wolny",
+    "audience": "technikum, BSI",
+    "description": "Klasy technikum mają dzień wolny od zajęć dydaktycznych; klasy branżowe są u pracodawców."
+  },
+  {
+    "date": "2025-10-15",
+    "title": "Rada pedagogiczna",
+    "type": "rady pedagogiczne",
+    "audience": "nauczyciele",
+    "description": "Planowana rada pedagogiczna o 15:00."
+  },
+  {
+    "date": "2025-11-05",
+    "title": "BS II semestr 3 - warunki dopuszczenia",
+    "type": "klasyfikacja",
+    "audience": "BS II stopnia",
+    "description": "Termin informacji o spełnieniu warunków dopuszczenia do egzaminu semestralnego dla semestru 3 BS II."
+  },
+  {
+    "date": "2025-11-17",
+    "endDate": "2025-12-12",
+    "title": "Praktyki zawodowe klas 3 technikum",
+    "type": "praktyki",
+    "audience": "3TFA, 3TFB, 3TH",
+    "description": "Praktyki zawodowe w klasach 3TFA, 3TFB i 3TH."
+  },
+  {
+    "date": "2025-11-19",
+    "title": "Wywiadówka klas 5TF i 5TH",
+    "type": "zebrania",
+    "audience": "5TF, 5TH, pozostałe klasy",
+    "description": "Wywiadówka dla klas 5TF i 5TH oraz konsultacje nauczycieli dla pozostałych klas."
+  },
+  {
+    "date": "2025-11-21",
+    "title": "Oceny proponowane - klasy maturalne",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne",
+    "description": "Termin wystawienia ocen proponowanych za I półrocze w klasach maturalnych."
+  },
+  {
+    "date": "2025-12-04",
+    "title": "BS II semestr 3 - egzaminy semestralne",
+    "type": "egzaminy",
+    "audience": "BS II stopnia",
+    "description": "Termin egzaminów semestralnych dla semestru 3 BS II."
+  },
+  {
+    "date": "2025-12-05",
+    "title": "Oceny semestralne - klasy maturalne",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne",
+    "description": "Termin ocen semestralnych za I półrocze w klasach maturalnych."
+  },
+  {
+    "date": "2025-12-08",
+    "title": "Złożenie zestawień - klasy maturalne",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne",
+    "description": "Termin złożenia zestawień klasyfikacyjnych za I półrocze."
+  },
+  {
+    "date": "2025-12-10",
+    "title": "Rada klasyfikacyjna klas maturalnych",
+    "type": "rady pedagogiczne",
+    "audience": "klasy maturalne",
+    "description": "Rada klasyfikacyjna o 15:00 oraz szkolenie z procedur przeprowadzania egzaminów zawodowych."
+  },
+  {
+    "date": "2025-12-12",
+    "title": "BS II semestr 1 - warunki dopuszczenia",
+    "type": "klasyfikacja",
+    "audience": "BS II stopnia",
+    "description": "Termin informacji o spełnieniu warunków dopuszczenia do egzaminu semestralnego dla semestru 1 BS II."
+  },
+  {
+    "date": "2025-12-22",
+    "endDate": "2025-12-31",
+    "title": "Zimowa przerwa świąteczna",
+    "type": "przerwy",
+    "audience": "wszyscy uczniowie",
+    "description": "Zimowa przerwa świąteczna."
+  },
+  {
+    "date": "2026-01-02",
+    "title": "Dzień wolny od zajęć dydaktycznych",
+    "type": "dzień wolny",
+    "audience": "uczniowie",
+    "description": "Dzień wolny od zajęć dydaktycznych, odpracowanie w sobotę 17 stycznia 2026 r."
+  },
+  {
+    "date": "2026-01-07",
+    "title": "Oceny proponowane - pozostałe klasy",
+    "type": "klasyfikacja",
+    "audience": "pozostałe klasy",
+    "description": "Termin ocen proponowanych za I półrocze w pozostałych klasach."
+  },
+  {
+    "date": "2026-01-08",
+    "endDate": "2026-01-22",
+    "title": "Egzaminy zawodowe - sesja zimowa",
+    "type": "egzaminy",
+    "audience": "uczniowie przystępujący do egzaminów zawodowych",
+    "description": "Zimowa sesja egzaminów zawodowych."
+  },
+  {
+    "date": "2026-01-12",
+    "title": "Egzaminy zawodowe - dzień organizacyjny",
+    "type": "dzień wolny",
+    "audience": "technikum, BSI",
+    "description": "Klasy technikum bez zajęć dydaktycznych; klasy branżowe są u pracodawców."
+  },
+  {
+    "date": "2026-01-17",
+    "title": "Konsultacje dla wszystkich klas",
+    "type": "konsultacje",
+    "audience": "wszyscy uczniowie i rodzice",
+    "description": "Sobota konsultacyjna dla wszystkich klas, odrabianie za piątek 2 stycznia 2026 r."
+  },
+  {
+    "date": "2026-01-21",
+    "title": "Oceny semestralne - pozostałe klasy",
+    "type": "klasyfikacja",
+    "audience": "pozostałe klasy, BS II semestr 1",
+    "description": "Termin ocen semestralnych za I półrocze w pozostałych klasach oraz egzaminy semestralne BS II semestru 1."
+  },
+  {
+    "date": "2026-01-26",
+    "title": "Złożenie zestawień - pozostałe klasy",
+    "type": "klasyfikacja",
+    "audience": "pozostałe klasy",
+    "description": "Termin złożenia zestawień klasyfikacyjnych za I półrocze."
+  },
+  {
+    "date": "2026-01-28",
+    "title": "Wywiadówka półroczna i rada klasyfikacyjna",
+    "type": "zebrania",
+    "audience": "klasy 1-3 BSI oraz 1-4 T5",
+    "description": "Wywiadówka półroczna oraz rada klasyfikacyjna pozostałych klas o 15:00."
+  },
+  {
+    "date": "2026-01-31",
+    "endDate": "2026-02-15",
+    "title": "Ferie zimowe",
+    "type": "przerwy",
+    "audience": "wszyscy uczniowie",
+    "description": "Ferie zimowe."
+  },
+  {
+    "date": "2026-02-18",
+    "title": "Rada plenarna podsumowująca I półrocze",
+    "type": "rady pedagogiczne",
+    "audience": "nauczyciele",
+    "description": "Planowana rada pedagogiczna o 15:00."
+  },
+  {
+    "date": "2026-03-02",
+    "endDate": "2026-03-27",
+    "title": "Praktyki zawodowe klas 4 technikum",
+    "type": "praktyki",
+    "audience": "4TFB, 4TH",
+    "description": "Praktyki zawodowe w klasach 4TFB i 4TH."
+  },
+  {
+    "date": "2026-03-16",
+    "title": "BS II semestr 4 - warunki dopuszczenia",
+    "type": "klasyfikacja",
+    "audience": "BS II stopnia",
+    "description": "Termin informacji o spełnieniu warunków dopuszczenia do egzaminu semestralnego dla semestru 4 BS II."
+  },
+  {
+    "date": "2026-03-18",
+    "title": "Wywiadówka klas maturalnych i rada szkoleniowa",
+    "type": "zebrania",
+    "audience": "5TF, 5TH, pozostałe klasy",
+    "description": "Wywiadówka dla klas 5TF i 5TH, konsultacje nauczycieli dla pozostałych klas oraz rada szkoleniowa o 15:00."
+  },
+  {
+    "date": "2026-04-01",
+    "title": "Oceny proponowane - klasy maturalne",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne",
+    "description": "Termin ocen proponowanych przed zakończeniem roku szkolnego klas maturalnych."
+  },
+  {
+    "date": "2026-04-02",
+    "endDate": "2026-04-07",
+    "title": "Wiosenna przerwa świąteczna",
+    "type": "przerwy",
+    "audience": "wszyscy uczniowie",
+    "description": "Wiosenna przerwa świąteczna."
+  },
+  {
+    "date": "2026-04-14",
+    "endDate": "2026-04-16",
+    "title": "Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz",
+    "type": "wydarzenia",
+    "audience": "uczniowie branżowi",
+    "description": "Turniej zawodowy dla uczniów w zawodach cukiernik i piekarz."
+  },
+  {
+    "date": "2026-04-17",
+    "title": "Klasy maturalne i BS II semestr 4 - klasyfikacja",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne, BS II stopnia",
+    "description": "Oceny semestralne klas maturalnych oraz egzaminy semestralne BS II semestru 4."
+  },
+  {
+    "date": "2026-04-20",
+    "title": "Złożenie zestawień - klasy maturalne",
+    "type": "klasyfikacja",
+    "audience": "klasy maturalne",
+    "description": "Termin złożenia zestawień klasyfikacyjnych klas maturalnych."
+  },
+  {
+    "date": "2026-04-22",
+    "title": "Rada klasyfikacyjna klas maturalnych",
+    "type": "rady pedagogiczne",
+    "audience": "klasy maturalne",
+    "description": "Rada klasyfikacyjna o 15:00 oraz szkolenie z procedur maturalnych."
+  },
+  {
+    "date": "2026-04-24",
+    "title": "Zakończenie roku szkolnego klas maturalnych",
+    "type": "rok szkolny",
+    "audience": "klasy maturalne",
+    "description": "Zakończenie roku szkolnego klas maturalnych."
+  },
+  {
+    "date": "2026-05-01",
+    "title": "Ogólnopolski Konkurs Król Fryzjerów - Fryzjer Królów",
+    "type": "wydarzenia",
+    "audience": "uczniowie fryzjerstwa",
+    "description": "Wydarzenie zaplanowane na maj 2026 r.; dokładny dzień do uzupełnienia po potwierdzeniu."
+  },
+  {
+    "date": "2026-05-04",
+    "endDate": "2026-05-06",
+    "title": "Egzamin maturalny i dni wolne dla technikum",
+    "type": "egzaminy",
+    "audience": "technikum, BSI",
+    "description": "Matury; klasy technikum mają dni wolne od zajęć dydaktycznych, klasy branżowe są u pracodawców."
+  },
+  {
+    "date": "2026-05-13",
+    "title": "BS II semestr 2 - warunki dopuszczenia",
+    "type": "klasyfikacja",
+    "audience": "BS II stopnia",
+    "description": "Termin informacji o spełnieniu warunków dopuszczenia do egzaminu semestralnego dla semestru 2 BS II."
+  },
+  {
+    "date": "2026-05-27",
+    "title": "Wywiadówka dla wszystkich klas i rada egzaminacyjna",
+    "type": "zebrania",
+    "audience": "wszystkie klasy",
+    "description": "Wywiadówka dla wszystkich klas oraz szkolenie z procedur przeprowadzania egzaminów zawodowych o 15:00."
+  },
+  {
+    "date": "2026-05-29",
+    "title": "Oceny proponowane - pozostałe klasy",
+    "type": "klasyfikacja",
+    "audience": "pozostałe klasy",
+    "description": "Termin ocen proponowanych przed zakończeniem roku szkolnego w pozostałych klasach."
+  },
+  {
+    "date": "2026-05-30",
+    "title": "Konsultacje dla wszystkich klas",
+    "type": "konsultacje",
+    "audience": "wszyscy uczniowie i rodzice",
+    "description": "Sobota konsultacyjna i dzień sportu, odrabianie za piątek 5 czerwca 2026 r."
+  },
+  {
+    "date": "2026-06-02",
+    "endDate": "2026-06-11",
+    "title": "Egzaminy zawodowe - sesja letnia",
+    "type": "egzaminy",
+    "audience": "uczniowie przystępujący do egzaminów zawodowych",
+    "description": "Letnia sesja egzaminów zawodowych."
+  },
+  {
+    "date": "2026-06-02",
+    "endDate": "2026-06-03",
+    "title": "Egzaminy zawodowe - dni wolne dla technikum",
+    "type": "dzień wolny",
+    "audience": "technikum, BSI",
+    "description": "Klasy technikum bez zajęć dydaktycznych; klasy branżowe są u pracodawców."
+  },
+  {
+    "date": "2026-06-05",
+    "title": "Piątek po Bożym Ciele - dzień wolny",
+    "type": "dzień wolny",
+    "audience": "uczniowie",
+    "description": "Dzień wolny od zajęć, odpracowany 30 maja 2026 r."
+  },
+  {
+    "date": "2026-06-12",
+    "title": "Oceny semestralne - pozostałe klasy i BS II semestr 2",
+    "type": "klasyfikacja",
+    "audience": "pozostałe klasy, BS II stopnia",
+    "description": "Termin ocen semestralnych w pozostałych klasach oraz egzaminów semestralnych BS II semestru 2."
+  },
+  {
+    "date": "2026-06-17",
+    "title": "Rada klasyfikacyjna pozostałych klas",
+    "type": "rady pedagogiczne",
+    "audience": "pozostałe klasy",
+    "description": "Złożenie zestawień oraz rada klasyfikacyjna o 15:00; termin rezerwowy 18 czerwca 2026 r."
+  },
+  {
+    "date": "2026-06-25",
+    "title": "Rada plenarna podsumowująca II półrocze",
+    "type": "rady pedagogiczne",
+    "audience": "nauczyciele",
+    "description": "Planowana rada pedagogiczna o 14:00."
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Uroczyste zakończenie roku szkolnego",
+    "type": "rok szkolny",
+    "audience": "wszyscy uczniowie",
+    "description": "Uroczyste zakończenie roku szkolnego 2025/2026."
+  },
+  {
+    "date": "2026-06-27",
+    "endDate": "2026-08-31",
+    "title": "Ferie letnie",
+    "type": "przerwy",
+    "audience": "wszyscy uczniowie",
+    "description": "Ferie letnie."
+  },
+  {
+    "date": "2026-08-24",
+    "endDate": "2026-08-27",
+    "title": "Sesja poprawkowa",
+    "type": "egzaminy",
+    "audience": "uczniowie przystępujący do egzaminów poprawkowych",
+    "description": "Sesja poprawkowa przed radą klasyfikacyjną."
+  },
+  {
+    "date": "2026-08-31",
+    "title": "Rady pedagogiczne przed rokiem 2026/2027",
+    "type": "rady pedagogiczne",
+    "audience": "nauczyciele",
+    "description": "9:00 rada klasyfikacyjna, rada plenarna podsumowująca rok 2025/2026 i rada inaugurująca rok 2026/2027."
+  }
+]

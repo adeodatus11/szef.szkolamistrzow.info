@@ -1,0 +1,27 @@
+---
+type DocumentItem = {
+  title: string;
+  category: string;
+  schoolYear: string;
+  trade: string;
+  updated: string;
+  url: string;
+};
+
+const { documents } = Astro.props as { documents: DocumentItem[] };
+---
+
+<div class="panel document-table">
+  {documents.map((doc) => (
+    <article class="document-row">
+      <div class="doc-title">
+        <strong>{doc.title}</strong>
+        <span class="muted">{doc.trade}</span>
+      </div>
+      <span class="tag">{doc.category}</span>
+      <span class="muted">{doc.schoolYear}</span>
+      <span class="muted">Aktualizacja: {doc.updated}</span>
+      <a class="button secondary" href={doc.url}>Pobierz</a>
+    </article>
+  ))}
+</div>

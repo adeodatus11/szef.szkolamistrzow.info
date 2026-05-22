@@ -1,0 +1,47 @@
+[
+  {
+    "id": "pip-zatrudnianie",
+    "name": "Państwowa Inspekcja Pracy - zatrudnianie pracowników młodocianych",
+    "url": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/zatrudnianie-pracownikow-mlodocianych/?tmpl=pdf"
+  },
+  {
+    "id": "pip-ochrona",
+    "name": "Państwowa Inspekcja Pracy - ochrona pracy młodocianych",
+    "url": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/ochrona-pracy-mlodocianych"
+  },
+  {
+    "id": "men-nauka-zawodu",
+    "name": "Ministerstwo Edukacji - przygotowanie zawodowe młodocianych pracowników w formie nauki zawodu",
+    "url": "https://www.gov.pl/web/edukacja/przygotowanie-zawodowe-mlodocianych-pracownikow-w-formie-nauki-zawodu"
+  },
+  {
+    "id": "kodeks-pracy",
+    "name": "Kodeks pracy - tekst ogłoszony w Dzienniku Ustaw",
+    "url": "https://eli.gov.pl/eli/DU/2025/277/ogl/pol"
+  },
+  {
+    "id": "rozporzadzenie-przygotowanie",
+    "name": "Rozporządzenie w sprawie przygotowania zawodowego młodocianych i ich wynagradzania",
+    "url": "https://eli.gov.pl/api/acts/DU/2018/2010/text.html"
+  },
+  {
+    "id": "prace-wzbronione",
+    "name": "Rozporządzenie w sprawie wykazu prac wzbronionych młodocianym",
+    "url": "https://eli.gov.pl/api/acts/DU/2023/1240/text.html"
+  },
+  {
+    "id": "ohp-refundacja",
+    "name": "Ochotnicze Hufce Pracy - zasady refundacji",
+    "url": "https://www.ohp.pl/rozwoj-zawodowy/refundacja/zasady"
+  },
+  {
+    "id": "samorzad-dofinansowanie",
+    "name": "Przykład informacji samorządowej o dofinansowaniu kosztów kształcenia młodocianych",
+    "url": "https://samorzad.gov.pl/web/gmina-kobior/dofinansowanie-kosztow-ksztalcenia-mlodocianych-pracownikow"
+  },
+  {
+    "id": "ore-podstawy",
+    "name": "Ośrodek Rozwoju Edukacji - podstawy programowe kształcenia w zawodach",
+    "url": "https://www.ore.edu.pl/2019/08/podstawy-programowe-ksztalcenia-w-zawodach-szkolnictwa-branzowego/"
+  }
+]

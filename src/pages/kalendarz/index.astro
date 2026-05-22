@@ -1,0 +1,233 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import events from "../../data/events.json";
+
+const sortedEvents = [...events].sort((a, b) => a.date.localeCompare(b.date));
+const eventTypes = [...new Set(events.map((event) => event.type))];
+const calendarMonths = [...new Set(sortedEvents.map((event) => event.date.slice(0, 7)))].sort();
+const defaultCalendarMonth = "2026-05";
+const formatDate = (value: string) => new Intl.DateTimeFormat("pl-PL", { day: "2-digit", month: "short" }).format(new Date(value));
+const formatRange = (event: { date: string; endDate?: string }) => event.endDate ? `${formatDate(event.date)} - ${formatDate(event.endDate)}` : formatDate(event.date);
+const formatMonth = (value: string) => {
+  const [year, month] = value.split("-").map(Number);
+  return new Intl.DateTimeFormat("pl-PL", { month: "long", year: "numeric" }).format(new Date(year, month - 1, 1));
+};
+---
+
+<BaseLayout
+  currentPath="/kalendarz/"
+  title="Kalendarz roku szkolnego - Strefa Pracodawcy"
+  description="Interaktywny kalendarz roku szkolnego 2025/2026 dla pracodawców, z terminami zebrań, egzaminów, klasyfikacji, praktyk i dni wolnych."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner">
+        <span class="eyebrow">Terminy</span>
+        <h1>Kalendarz roku szkolnego 2025/2026</h1>
+        <p class="muted">Terminy z kalendarza szkolnego dla Technikum, Branżowej Szkoły I stopnia i Branżowej Szkoły II stopnia.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner calendar-wrap">
+        <div class="panel calendar">
+          <div class="calendar-tools">
+            <h2 class="calendar-title" id="calendar-title">{formatMonth(defaultCalendarMonth)}</h2>
+            <div class="field compact-field">
+              <label for="month-filter">Miesiąc</label>
+              <select id="month-filter">
+                {calendarMonths.map((month) => <option value={month} selected={month === defaultCalendarMonth}>{formatMonth(month)}</option>)}
+              </select>
+            </div>
+          </div>
+          <div class="calendar-header" aria-hidden="true">
+            <span>Pon</span><span>Wt</span><span>Śr</span><span>Czw</span><span>Pt</span><span>Sob</span><span>Nd</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid" aria-live="polite"></div>
+        </div>
+        <aside class="panel">
+          <h2>Lista wydarzeń</h2>
+          <div class="field">
+            <label for="event-filter">Filtr typu</label>
+            <select id="event-filter">
+              <option value="all">Wszystkie</option>
+              {eventTypes.map((type) => <option value={type}>{type}</option>)}
+            </select>
+          </div>
+          <a class="button secondary calendar-download" href="/dokumenty/inne/kalendarz-roku-szkolnego-2025-2026.pdf">Pobierz PDF kalendarza</a>
+          <ul class="event-list" id="event-list">
+            {sortedEvents.map((event) => (
+              <li class="event-item" data-event-type={event.type} data-event-date={event.date} data-event-end={event.endDate ?? event.date}>
+                <span class="event-date">{formatRange(event)}</span>
+                <button class="event-list-button" type="button" data-event-title={event.title} data-event-type={event.type} data-event-date={formatRange(event)} data-event-audience={event.audience} data-event-description={event.description}>
+                  <strong>{event.title}</strong>
+                  <span class="muted">{event.description}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div class="event-modal" id="event-modal" hidden>
+    <div class="event-modal-card" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+      <div class="search-head">
+        <div>
+          <span class="tag" id="event-modal-type"></span>
+          <h2 id="event-modal-title"></h2>
+        </div>
+        <button class="icon-button" id="event-modal-close" type="button" aria-label="Zamknij opis wydarzenia">×</button>
+      </div>
+      <dl class="event-detail-list">
+        <div>
+          <dt>Termin</dt>
+          <dd id="event-modal-date"></dd>
+        </div>
+        <div>
+          <dt>Dotyczy</dt>
+          <dd id="event-modal-audience"></dd>
+        </div>
+      </dl>
+      <p id="event-modal-description"></p>
+    </div>
+  </div>
+  <script is:inline type="application/json" id="calendar-data" set:html={JSON.stringify(sortedEvents)}></script>
+  <script is:inline>
+    const calendarData = JSON.parse(document.querySelector("#calendar-data")?.textContent || "[]");
+    const calendarGrid = document.querySelector("#calendar-grid");
+    const calendarTitle = document.querySelector("#calendar-title");
+    const monthFilter = document.querySelector("#month-filter");
+    const eventFilter = document.querySelector("#event-filter");
+    const eventItems = [...document.querySelectorAll("#event-list .event-item")];
+    const eventModal = document.querySelector("#event-modal");
+    const eventModalClose = document.querySelector("#event-modal-close");
+    const eventModalTitle = document.querySelector("#event-modal-title");
+    const eventModalType = document.querySelector("#event-modal-type");
+    const eventModalDate = document.querySelector("#event-modal-date");
+    const eventModalAudience = document.querySelector("#event-modal-audience");
+    const eventModalDescription = document.querySelector("#event-modal-description");
+    const monthFormatter = new Intl.DateTimeFormat("pl-PL", { month: "long", year: "numeric" });
+    const shortDateFormatter = new Intl.DateTimeFormat("pl-PL", { day: "2-digit", month: "short" });
+
+    function formatShortDate(value) {
+      return shortDateFormatter.format(new Date(`${value}T00:00:00`));
+    }
+
+    function formatEventRange(event) {
+      return event.endDate ? `${formatShortDate(event.date)} - ${formatShortDate(event.endDate)}` : formatShortDate(event.date);
+    }
+
+    function dateInRange(date, start, end) {
+      return date >= start && date <= end;
+    }
+
+    function eventTouchesMonth(event, month) {
+      const monthStart = `${month}-01`;
+      const [year, monthNumber] = month.split("-").map(Number);
+      const lastDay = new Date(year, monthNumber, 0).getDate();
+      const monthEnd = `${month}-${String(lastDay).padStart(2, "0")}`;
+      return event.date <= monthEnd && (event.endDate || event.date) >= monthStart;
+    }
+
+    function filterEvents() {
+      const value = eventFilter?.value || "all";
+      const month = monthFilter?.value || "all";
+      eventItems.forEach((item) => {
+        const matchesType = value === "all" || item.dataset.eventType === value;
+        const matchesMonth = month === "all" || (item.dataset.eventDate <= `${month}-31` && item.dataset.eventEnd >= `${month}-01`);
+        item.hidden = !(matchesType && matchesMonth);
+      });
+    }
+
+    function renderCalendar(month) {
+      if (!calendarGrid || !calendarTitle) return;
+      const [year, monthNumber] = month.split("-").map(Number);
+      const monthIndex = monthNumber - 1;
+      const firstDay = new Date(year, monthIndex, 1).getDay();
+      const leadingDays = firstDay === 0 ? 6 : firstDay - 1;
+      const daysInMonth = new Date(year, monthNumber, 0).getDate();
+      const monthEvents = calendarData.filter((event) => eventTouchesMonth(event, month));
+
+      calendarTitle.textContent = monthFormatter.format(new Date(year, monthIndex, 1));
+      calendarGrid.replaceChildren();
+
+      for (let i = 0; i < leadingDays; i += 1) {
+        const emptyCell = document.createElement("div");
+        emptyCell.className = "day empty";
+        calendarGrid.append(emptyCell);
+      }
+
+      for (let day = 1; day <= daysInMonth; day += 1) {
+        const dateKey = `${month}-${String(day).padStart(2, "0")}`;
+        const dayEvents = monthEvents.filter((event) => dateInRange(dateKey, event.date, event.endDate || event.date));
+        const dayCell = document.createElement("div");
+        dayCell.className = `day ${dayEvents.length ? "has-event" : ""}`;
+        if (dayEvents.length) dayCell.dataset.eventType = dayEvents[0].type;
+        const dayNumber = document.createElement("span");
+        dayNumber.className = "day-number";
+        dayNumber.textContent = String(day);
+        dayCell.append(dayNumber);
+        dayEvents.slice(0, 2).forEach((event) => {
+          const eventLabel = document.createElement("button");
+          eventLabel.type = "button";
+          eventLabel.className = "day-event";
+          eventLabel.textContent = event.title;
+          eventLabel.dataset.eventTitle = event.title;
+          eventLabel.dataset.eventType = event.type;
+          eventLabel.dataset.eventDate = formatEventRange(event);
+          eventLabel.dataset.eventAudience = event.audience;
+          eventLabel.dataset.eventDescription = event.description;
+          dayCell.append(eventLabel);
+        });
+        if (dayEvents.length > 2) {
+          const more = document.createElement("button");
+          more.type = "button";
+          more.className = "day-event";
+          more.textContent = `+${dayEvents.length - 2} więcej`;
+          more.dataset.eventTitle = `${dayEvents.length} wydarzenia`;
+          more.dataset.eventType = "terminy";
+          more.dataset.eventDate = dateKey;
+          more.dataset.eventAudience = "wybrany dzień";
+          more.dataset.eventDescription = dayEvents.map((event) => `${event.title}: ${event.description}`).join("\\n");
+          dayCell.append(more);
+        }
+        calendarGrid.append(dayCell);
+      }
+    }
+
+    function openEventModal(trigger) {
+      if (!eventModal) return;
+      eventModalTitle.textContent = trigger.dataset.eventTitle || "";
+      eventModalType.textContent = trigger.dataset.eventType || "";
+      eventModalDate.textContent = trigger.dataset.eventDate || "";
+      eventModalAudience.textContent = trigger.dataset.eventAudience || "";
+      eventModalDescription.textContent = trigger.dataset.eventDescription || "";
+      eventModal.hidden = false;
+      document.body.classList.add("search-open");
+      eventModalClose?.focus();
+    }
+
+    function closeEventModal() {
+      eventModal.hidden = true;
+      document.body.classList.remove("search-open");
+    }
+
+    monthFilter?.addEventListener("change", () => {
+      renderCalendar(monthFilter.value);
+      filterEvents();
+    });
+    eventFilter?.addEventListener("change", filterEvents);
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest(".day-event, .event-list-button");
+      if (trigger) openEventModal(trigger);
+      if (event.target === eventModal) closeEventModal();
+    });
+    eventModalClose?.addEventListener("click", closeEventModal);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !eventModal?.hidden) closeEventModal();
+    });
+    renderCalendar(monthFilter?.value || "2026-05");
+    filterEvents();
+  </script>
+</BaseLayout>

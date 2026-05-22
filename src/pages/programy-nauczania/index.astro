@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const programLinks = [
+  { title: "Podstawy programowe kształcenia w zawodach szkolnictwa branżowego", href: "https://www.ore.edu.pl/2019/08/podstawy-programowe-ksztalcenia-w-zawodach-szkolnictwa-branzowego/", source: "ORE" },
+  { title: "Klasyfikacja zawodów szkolnictwa branżowego", href: "https://www.gov.pl/web/edukacja/klasyfikacja-zawodow-szkolnictwa-branzowego", source: "gov.pl" },
+  { title: "Informator o egzaminie zawodowym", href: "https://cke.gov.pl/egzamin-zawodowy/egzamin-zawodowy-formula-2019/informatory/", source: "CKE" }
+];
+const localNote = "Tutaj można dodać szkolne programy nauczania dla konkretnych zawodów jako pliki PDF/DOCX, gdy zostaną przekazane do repozytorium.";
+---
+
+<BaseLayout
+  currentPath="/programy-nauczania/"
+  title="Programy nauczania w zawodach - Strefa Pracodawcy"
+  description="Programy nauczania, podstawy programowe, klasyfikacja zawodów i materiały CKE/ORE dla zawodów w szkolnictwie branżowym."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner">
+        <span class="eyebrow">Programy nauczania</span>
+        <h1>Programy i podstawy programowe w zawodach</h1>
+        <p class="muted">Osobna przestrzeń dla programów nauczania, podstaw programowych i materiałów opisujących efekty kształcenia w zawodach.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="content-grid">
+          {programLinks.map((link) => (
+            <a class="card link-card" href={link.href}>
+              <span class="tag">{link.source}</span>
+              <h2>{link.title}</h2>
+              <p class="muted">Źródło oficjalne do weryfikacji podstaw programowych i wymagań egzaminacyjnych.</p>
+            </a>
+          ))}
+        </div>
+        <div class="panel page-note">
+          <h2>Szkolne programy nauczania</h2>
+          <p class="muted">{localNote}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

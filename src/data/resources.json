@@ -1,0 +1,116 @@
+[
+  {
+    "category": "Państwowa Inspekcja Pracy",
+    "description": "Poradniki, odpowiedzi prawne i publikacje PIP dotyczące pracowników młodocianych, BHP i pierwszej pracy.",
+    "items": [
+      {
+        "title": "Zatrudnianie pracowników młodocianych",
+        "url": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/zatrudnianie-pracownikow-mlodocianych/?tmpl=pdf",
+        "note": "Najważniejszy punkt startowy: przygotowanie zawodowe, umowa, czas pracy, urlop, prace lekkie i podstawy prawne."
+      },
+      {
+        "title": "Ochrona pracy młodocianych",
+        "url": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/ochrona-pracy-mlodocianych?tmpl=pdf",
+        "note": "BHP, prace wzbronione, czas pracy, praca nocna, odpoczynek i obowiązki ochronne pracodawcy."
+      },
+      {
+        "title": "Pracownik młodociany - publikacja PIP",
+        "url": "https://www.pip.gov.pl/multimedia/dla-pracodawcow/pracownik-mlodociany",
+        "note": "Strona publikacji PIP z materiałem do pobrania i dodatkowymi odnośnikami."
+      },
+      {
+        "title": "Ochrona pracy kobiet i młodocianych",
+        "url": "https://katowice.pip.gov.pl/aktualnosci/ochrona-pracy-kobiet-i-mlodocianych-zaproszenie-do-lektury-wydawnictwa-pip",
+        "note": "Broszura PIP przydatna przy ocenie ograniczeń stanowisk pracy i obowiązków BHP."
+      },
+      {
+        "title": "Wakacyjna praca młodocianych - prawa i obowiązki",
+        "url": "https://poznan.pip.gov.pl/aktualnosci/wakacyjna-praca-mlodocianych-twoje-prawa-i-obowiazki?tmpl=pdf",
+        "note": "Praktyczny materiał o umowach, prawach, obowiązkach i bezpiecznej pracy młodych osób."
+      },
+      {
+        "title": "Badania lekarskie pracowników",
+        "url": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/profilaktyczna-ochrona-zdrowia-pracownikow-badania-lekarskie",
+        "note": "Przypomnienie zasad badań profilaktycznych przed dopuszczeniem do pracy."
+      },
+      {
+        "title": "Tag PIP: młodociany",
+        "url": "https://www.pip.gov.pl/tagi/mlodociany",
+        "note": "Zbiorcza lista aktualnych materiałów PIP oznaczonych tematem pracowników młodocianych."
+      }
+    ]
+  },
+  {
+    "category": "Ministerstwa i prawo",
+    "description": "Źródła do weryfikacji podstaw prawnych, wynagrodzenia, przygotowania zawodowego i prac wzbronionych.",
+    "items": [
+      {
+        "title": "MEN: przygotowanie zawodowe młodocianych pracowników w formie nauki zawodu",
+        "url": "https://www.gov.pl/web/edukacja/przygotowanie-zawodowe-mlodocianych-pracownikow-w-formie-nauki-zawodu",
+        "note": "Oficjalne omówienie nauki zawodu młodocianych pracowników."
+      },
+      {
+        "title": "Kodeks pracy - ELI",
+        "url": "https://eli.gov.pl/eli/DU/2025/277/ogl/pol",
+        "note": "Tekst aktu prawnego w systemie ELI/Dziennik Ustaw."
+      },
+      {
+        "title": "Rozporządzenie w sprawie przygotowania zawodowego młodocianych i wynagradzania",
+        "url": "https://eli.gov.pl/api/acts/DU/2018/2010/text.html",
+        "note": "Podstawowe rozporządzenie dla umów, przygotowania zawodowego i wynagrodzeń młodocianych."
+      },
+      {
+        "title": "Zmiany rozporządzenia o przygotowaniu zawodowym młodocianych",
+        "url": "https://eli.gov.pl/api/acts/DU/2023/1348/text.html",
+        "note": "Akt zmieniający, ważny przy weryfikacji aktualnego brzmienia przepisów."
+      },
+      {
+        "title": "Rozporządzenie w sprawie prac wzbronionych młodocianym",
+        "url": "https://eli.gov.pl/api/acts/DU/2023/1240/text.html",
+        "note": "Kluczowe źródło do oceny stanowiska pracy i wyjątków dla przygotowania zawodowego."
+      }
+    ]
+  },
+  {
+    "category": "Refundacja i dofinansowanie",
+    "description": "Materiały pomocne przy planowaniu kosztów przygotowania zawodowego.",
+    "items": [
+      {
+        "title": "OHP: zasady refundacji wynagrodzeń i składek",
+        "url": "https://www.ohp.pl/rozwoj-zawodowy/refundacja/zasady",
+        "note": "Oficjalne zasady refundacji z OHP, wymagania i ścieżka postępowania."
+      },
+      {
+        "title": "Przykład informacji samorządowej: dofinansowanie kosztów kształcenia",
+        "url": "https://samorzad.gov.pl/web/gmina-kobior/dofinansowanie-kosztow-ksztalcenia-mlodocianych-pracownikow",
+        "note": "Przykład sposobu opisu procedury przez samorząd; właściwe terminy i wymagania trzeba sprawdzać w swojej gminie."
+      }
+    ]
+  },
+  {
+    "category": "Kształcenie zawodowe i egzaminy",
+    "description": "Podstawy programowe, klasyfikacje zawodów i informatory egzaminacyjne.",
+    "items": [
+      {
+        "title": "ORE: podstawy programowe kształcenia w zawodach - 2019",
+        "url": "https://ore.edu.pl/2019/08/podstawa-programowa-ksztalcenia-w-zawodach-2019/",
+        "note": "Podstawowe źródło dla zawodów szkolnictwa branżowego według podstawy z 2019 r."
+      },
+      {
+        "title": "ORE: podstawy programowe kształcenia w zawodach - 2023",
+        "url": "https://ore.edu.pl/2023/07/podstawy-programowe-ksztalcenia-w-zawodach-2023/",
+        "note": "Aktualizacje podstaw programowych i nowych zawodów."
+      },
+      {
+        "title": "CKE/BIP: egzamin zawodowy Formuła 2019",
+        "url": "https://bip.cke.gov.pl/artykul/212/1660/egzamin-zawodowy-formula-2019",
+        "note": "Informatory egzaminacyjne, w tym dla zawodów takich jak fryzjer, cukiernik, kucharz, elektryk czy fotograf."
+      },
+      {
+        "title": "gov.pl: klasyfikacja zawodów szkolnictwa branżowego",
+        "url": "https://www.gov.pl/web/edukacja/klasyfikacja-zawodow-szkolnictwa-branzowego",
+        "note": "Punkt startowy do sprawdzania nazw zawodów, kwalifikacji i zmian w klasyfikacji."
+      }
+    ]
+  }
+]

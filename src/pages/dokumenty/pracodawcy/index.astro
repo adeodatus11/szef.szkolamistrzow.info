@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import DocumentList from "../../../components/DocumentList.astro";
+import documents from "../../../data/documents.json";
+
+const filteredDocs = documents.filter((doc) => doc.category === "pracodawcy");
+---
+
+<BaseLayout
+  currentPath="/dokumenty/pracodawcy/"
+  title="Kontakty do pracodawców - Strefa Pracodawcy"
+  description="Listy pracodawców według zawodów i lat szkolnych, uporządkowane dla potrzeb praktycznej nauki zawodu."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner">
+        <span class="eyebrow">Dokumenty</span>
+        <h1>Kontakty do pracodawców według zawodów</h1>
+        <p class="muted">Listy pracodawców z podziałem na rok szkolny i zawód.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <DocumentList documents={filteredDocs} />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

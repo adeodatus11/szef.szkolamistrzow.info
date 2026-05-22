@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import DocumentList from "../../../components/DocumentList.astro";
+import documents from "../../../data/documents.json";
+
+const filteredDocs = documents.filter((doc) => doc.category === "ubezpieczenia");
+---
+
+<BaseLayout
+  currentPath="/dokumenty/ubezpieczenia/"
+  title="Ubezpieczenia - Strefa Pracodawcy"
+  description="Dokumenty dotyczące ubezpieczenia uczniów: OWU, formularze zgłoszenia szkody, ulotki i materiały informacyjne."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner">
+        <span class="eyebrow">Dokumenty</span>
+        <h1>Ubezpieczenia uczniów</h1>
+        <p class="muted">Dokumenty ubezpieczeniowe, OWU, ulotki i formularze zgłoszenia szkody.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <DocumentList documents={filteredDocs} />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,253 @@
+---
+import "../styles/global.css";
+import announcements from "../data/announcements.json";
+import documents from "../data/documents.json";
+import events from "../data/events.json";
+import knowledge from "../data/knowledge.json";
+import resources from "../data/resources.json";
+
+const {
+  title = "Strefa Pracodawcy - Szkoła Mistrzów",
+  description = "Komunikaty, kalendarz, dokumenty i baza wiedzy dla pracodawców współpracujących ze Szkołą Mistrzów.",
+  currentPath = "/"
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://szef.szkolamistrzow.info").toString();
+const socialImageUrl = new URL("/assets/logos/orzel.png", Astro.site ?? "https://szef.szkolamistrzow.info").toString();
+
+const navItems = [
+  { href: "/", label: "Start" },
+  { href: "/baza-wiedzy/", label: "Baza wiedzy" },
+  { href: "/kalendarz/", label: "Kalendarz" },
+  { href: "/dokumenty/umowy/", label: "Umowy" },
+  { href: "/dokumenty/ubezpieczenia/", label: "Ubezpieczenia" },
+  { href: "/dokumenty/pracodawcy/", label: "Pracodawcy" },
+  { href: "/programy-nauczania/", label: "Programy" },
+  { href: "/zrodla/", label: "Źródła" },
+  { href: "/kontakt/", label: "Kontakt" }
+];
+
+const searchItems = [
+  { title: "Start", text: "Pulpit pracodawcy, terminy i szybki dostęp.", url: "/", type: "strona" },
+  { title: "Baza wiedzy", text: "Pracownik młodociany, przygotowanie zawodowe, czas pracy, BHP i wynagrodzenie.", url: "/baza-wiedzy/", type: "strona" },
+  { title: "Kalendarz", text: "Kalendarz roku szkolnego 2025/2026.", url: "/kalendarz/", type: "strona" },
+  { title: "Programy nauczania", text: "Podstawy programowe, ORE, CKE i programy w zawodach.", url: "/programy-nauczania/", type: "strona" },
+  { title: "Źródła i poradniki", text: "Linki do PIP, gov.pl, ELI, OHP, ORE i CKE.", url: "/zrodla/", type: "strona" },
+  { title: "Kontakt", text: "Dane szkoły, ePUAP, e-doręczenia i KSeF.", url: "/kontakt/", type: "strona" },
+  ...knowledge.map((item) => ({ title: item.title, text: item.summary, url: "/baza-wiedzy/", type: "baza wiedzy" })),
+  ...documents.map((item) => ({ title: item.title, text: `${item.category} ${item.schoolYear} ${item.trade}`, url: item.url, type: "dokument" })),
+  ...events.map((item) => ({ title: item.title, text: `${item.type} ${item.audience} ${item.description}`, url: "/kalendarz/", type: "kalendarz" })),
+  ...announcements.map((item) => ({ title: item.title, text: item.summary, url: "/", type: "komunikat" })),
+  ...resources.flatMap((group) => group.items.map((item) => ({ title: item.title, text: `${group.category} ${item.note}`, url: item.url, type: "źródło" })))
+];
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Zespół Szkół Zawodowych nr 5 we Wrocławiu - Szkoła Mistrzów",
+  url: "https://szef.szkolamistrzow.info",
+  logo: "https://szef.szkolamistrzow.info/assets/logos/orzel.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "ul. Jana Władysława Dawida 5",
+    addressLocality: "Wrocław",
+    postalCode: "50-527",
+    addressCountry: "PL"
+  },
+  email: "sekretariat.zsz5@wroclawskaedukacja.pl",
+  telephone: "+48 71 798 69 34"
+};
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Zespół Szkół Zawodowych nr 5 we Wrocławiu" />
+    <meta name="theme-color" content="#089700" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" href="/assets/logos/orzel.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Strefa Pracodawcy - start">
+        <img class="brand-logo" src="/assets/logos/orzel.png" alt="Godło Szkoły Mistrzów" />
+        <span>
+          <span class="brand-kicker">Szkoła Mistrzów</span>
+          <span class="brand-name">Strefa Pracodawcy</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Nawigacja główna">
+        {navItems.map((item) => (
+          <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>{item.label}</a>
+        ))}
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" id="search-open" type="button" aria-label="Otwórz wyszukiwarkę">Szukaj</button>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Przełącz tryb ciemny">☾</button>
+        <button class="icon-button menu-button" id="menu-toggle" type="button" aria-label="Otwórz menu" aria-controls="main-nav" aria-expanded="false">☰</button>
+      </div>
+    </header>
+
+    <div class="search-panel" id="search-panel" hidden>
+      <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="search-head">
+          <h2 id="search-title">Wyszukiwarka</h2>
+          <button class="icon-button" id="search-close" type="button" aria-label="Zamknij wyszukiwarkę">×</button>
+        </div>
+        <div class="field">
+          <label for="site-search">Szukaj w strefie pracodawcy</label>
+          <input id="site-search" type="search" placeholder="np. urlop młodocianego, umowa, PIP, egzaminy" autocomplete="off" />
+        </div>
+        <div class="search-results" id="search-results" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h2>Strefa Pracodawcy Szkoły Mistrzów</h2>
+          <p>Zespół Szkół Zawodowych nr 5 we Wrocławiu, ul. Jana Władysława Dawida 5, 50-527 Wrocław.</p>
+          <div class="footer-links">
+            <a href="https://www.szkolamistrzow.info/">Strona szkoły</a>
+            <a href="/kontakt/">Kontakt</a>
+            <a href="/baza-wiedzy/">Baza wiedzy</a>
+            <a href="/dokumenty/umowy/">Dokumenty</a>
+          </div>
+          <p class="eu-note">Sfinansowane ze środków Unii Europejskiej. Wyrażone poglądy i opinie są jedynie poglądami i opiniami autorów i niekoniecznie odzwierciedlają poglądy Unii Europejskiej ani Europejskiej Agencji Wykonawczej ds. Edukacji i Kultury (EACEA). Unia Europejska ani EACEA nie ponoszą za nie odpowiedzialności.</p>
+        </div>
+        <div class="footer-logos">
+          <div class="logo-box"><img src="/assets/logos/cove-polska.png" alt="Logo COVE Polska" /></div>
+          <div class="logo-box"><img src="/assets/logos/eu-cofunded.png" alt="Współfinansowane przez Unię Europejską" /></div>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline type="application/json" id="site-search-data" set:html={JSON.stringify(searchItems)}></script>
+    <script is:inline>
+      const themeToggle = document.querySelector("#theme-toggle");
+      const menuToggle = document.querySelector("#menu-toggle");
+      const nav = document.querySelector("#main-nav");
+      const searchPanel = document.querySelector("#search-panel");
+      const searchOpen = document.querySelector("#search-open");
+      const searchClose = document.querySelector("#search-close");
+      const searchInput = document.querySelector("#site-search");
+      const searchResults = document.querySelector("#search-results");
+      const searchData = JSON.parse(document.querySelector("#site-search-data")?.textContent || "[]");
+
+      function syncThemeButton() {
+        if (!themeToggle) return;
+        themeToggle.textContent = document.documentElement.classList.contains("dark-mode") ? "☀" : "☾";
+      }
+
+      syncThemeButton();
+
+      themeToggle?.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        syncThemeButton();
+      });
+
+      menuToggle?.addEventListener("click", () => {
+        const isActive = nav.classList.toggle("active");
+        document.body.classList.toggle("menu-open", isActive);
+        menuToggle.setAttribute("aria-expanded", String(isActive));
+      });
+
+      nav?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          document.body.classList.remove("menu-open");
+          menuToggle?.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      function normalizeSearch(value) {
+        return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      function renderSearchResults(query = "") {
+        if (!searchResults) return;
+        const normalized = normalizeSearch(query.trim());
+        const matches = normalized.length < 2
+          ? searchData.slice(0, 8)
+          : searchData
+              .map((item) => ({ item, haystack: normalizeSearch(`${item.title} ${item.text} ${item.type}`) }))
+              .filter(({ haystack }) => haystack.includes(normalized))
+              .map(({ item }) => item)
+              .slice(0, 12);
+
+        searchResults.replaceChildren();
+        if (!matches.length) {
+          const empty = document.createElement("p");
+          empty.className = "muted";
+          empty.textContent = "Brak wyników. Spróbuj innego hasła.";
+          searchResults.append(empty);
+          return;
+        }
+
+        matches.forEach((item) => {
+          const link = document.createElement("a");
+          link.className = "search-result";
+          link.href = item.url;
+          link.innerHTML = `<span class="tag">${item.type}</span><strong>${item.title}</strong><span>${item.text}</span>`;
+          searchResults.append(link);
+        });
+      }
+
+      function openSearch() {
+        if (!searchPanel) return;
+        searchPanel.hidden = false;
+        document.body.classList.add("search-open");
+        renderSearchResults(searchInput?.value || "");
+        setTimeout(() => searchInput?.focus(), 0);
+      }
+
+      function closeSearch() {
+        searchPanel.hidden = true;
+        document.body.classList.remove("search-open");
+        searchOpen?.focus();
+      }
+
+      searchOpen?.addEventListener("click", openSearch);
+      searchClose?.addEventListener("click", closeSearch);
+      searchInput?.addEventListener("input", () => renderSearchResults(searchInput.value));
+      searchPanel?.addEventListener("click", (event) => {
+        if (event.target === searchPanel) closeSearch();
+      });
+      document.addEventListener("keydown", (event) => {
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+          event.preventDefault();
+          openSearch();
+        }
+        if (event.key === "Escape" && !searchPanel?.hidden) closeSearch();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import resources from "../../data/resources.json";
+---
+
+<BaseLayout
+  currentPath="/zrodla/"
+  title="Źródła i poradniki - Strefa Pracodawcy"
+  description="Zebrane oficjalne źródła i poradniki dla pracodawców: PIP, gov.pl, ELI, OHP, ORE i CKE w zakresie młodocianych i przygotowania zawodowego."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner narrow">
+        <span class="eyebrow">Źródła i poradniki</span>
+        <h1>Linki do przydatnych materiałów</h1>
+        <p class="muted">Zebrane źródła dla pracodawców, opiekunów praktycznej nauki zawodu i osób pracujących z młodocianymi. Priorytet mają instytucje publiczne: PIP, gov.pl, ELI/Dziennik Ustaw, OHP, ORE i CKE.</p>
+        <p class="notice">Linki prowadzą do źródeł zewnętrznych. Przed użyciem dokumentu lub interpretacji należy sprawdzić datę publikacji oraz aktualność przepisów.</p>
+      </div>
+    </section>
+
+    {resources.map((group) => (
+      <section class="section resource-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">{group.category}</span>
+              <h2>{group.category}</h2>
+            </div>
+            <p class="muted">{group.description}</p>
+          </div>
+          <div class="source-grid">
+            {group.items.map((item) => (
+              <a class="card link-card resource-card" href={item.url}>
+                <h3>{item.title}</h3>
+                <p class="muted">{item.note}</p>
+                <span class="resource-url">{item.url}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+  </main>
+</BaseLayout>

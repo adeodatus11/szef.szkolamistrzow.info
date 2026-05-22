@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Kim jest pracownik młodociany?",
+    "category": "podstawy",
+    "summary": "Młodociany to osoba, która ukończyła 15 lat i nie przekroczyła 18 lat. Zatrudnianie osoby poniżej 15 lat jest co do zasady zakazane, poza wyjątkami przewidzianymi w przepisach.",
+    "sourceIds": ["pip-zatrudnianie", "kodeks-pracy"]
+  },
+  {
+    "title": "Kiedy można zatrudnić młodocianego w celu przygotowania zawodowego?",
+    "category": "umowa",
+    "summary": "Młodociany bez kwalifikacji zawodowych może być zatrudniony tylko w celu przygotowania zawodowego. Wymagane jest co najmniej ukończenie ośmioletniej szkoły podstawowej oraz zaświadczenie lekarskie, że praca danego rodzaju nie zagraża zdrowiu.",
+    "sourceIds": ["pip-zatrudnianie", "men-nauka-zawodu"]
+  },
+  {
+    "title": "Co musi zawierać umowa?",
+    "category": "umowa",
+    "summary": "Umowa o pracę w celu przygotowania zawodowego powinna być pisemna i wskazywać m.in. rodzaj przygotowania zawodowego, czas i miejsce odbywania przygotowania, sposób dokształcania teoretycznego oraz wynagrodzenie.",
+    "sourceIds": ["pip-zatrudnianie", "rozporzadzenie-przygotowanie"]
+  },
+  {
+    "title": "Kto może szkolić młodocianego?",
+    "category": "organizacja",
+    "summary": "Pracodawca, osoba prowadząca zakład albo osoba zatrudniona u pracodawcy, która prowadzi przygotowanie zawodowe, musi posiadać kwalifikacje wymagane od instruktorów praktycznej nauki zawodu.",
+    "sourceIds": ["men-nauka-zawodu", "rozporzadzenie-przygotowanie"]
+  },
+  {
+    "title": "Czas pracy młodocianego",
+    "category": "czas pracy",
+    "summary": "Młodociany do 16 lat może pracować maksymalnie 6 godzin na dobę, a powyżej 16 lat maksymalnie 8 godzin na dobę. Czas nauki wynikający z obowiązkowego programu zajęć szkolnych wlicza się do czasu pracy.",
+    "sourceIds": ["pip-ochrona", "kodeks-pracy"]
+  },
+  {
+    "title": "Nadgodziny, praca nocna i odpoczynek",
+    "category": "czas pracy",
+    "summary": "Młodocianego nie wolno zatrudniać w godzinach nadliczbowych ani w porze nocnej. Przerwa obejmująca porę nocną powinna trwać co najmniej 14 godzin, a odpoczynek tygodniowy co najmniej 48 godzin, co do zasady z niedzielą.",
+    "sourceIds": ["pip-ochrona", "kodeks-pracy"]
+  },
+  {
+    "title": "Prace wzbronione i stanowisko pracy",
+    "category": "bhp",
+    "summary": "Młodocianych nie wolno zatrudniać przy pracach wzbronionych. Wyjątki dotyczą tylko prac potrzebnych do przygotowania zawodowego, w zakresie dopuszczonym przepisami i przy szczególnej ochronie zdrowia.",
+    "sourceIds": ["pip-ochrona", "prace-wzbronione"]
+  },
+  {
+    "title": "Wynagrodzenie młodocianego",
+    "category": "wynagrodzenie",
+    "summary": "Minimalne wynagrodzenie w przygotowaniu zawodowym jest określane procentowo od przeciętnego miesięcznego wynagrodzenia w gospodarce narodowej w poprzednim kwartale: co najmniej 8%, 9% i 10% odpowiednio w kolejnych latach nauki; przy przyuczeniu co najmniej 7%.",
+    "sourceIds": ["rozporzadzenie-przygotowanie", "pip-zatrudnianie"]
+  },
+  {
+    "title": "Urlop młodocianego",
+    "category": "urlop",
+    "summary": "Po 6 miesiącach od rozpoczęcia pierwszej pracy młodociany nabywa prawo do 12 dni urlopu, a po roku do 26 dni. W roku ukończenia 18 lat urlop wynosi 20 dni, jeśli prawo nabyto przed ukończeniem 18 lat.",
+    "sourceIds": ["pip-ochrona", "kodeks-pracy"]
+  },
+  {
+    "title": "Refundacja i dofinansowanie",
+    "category": "finanse",
+    "summary": "Refundacja wynagrodzeń i składek oraz dofinansowanie kosztów kształcenia są warunkowe. Wymagają spełnienia kryteriów, terminowego złożenia wniosków, dokumentów i często rozliczenia pomocy de minimis.",
+    "sourceIds": ["ohp-refundacja", "samorzad-dofinansowanie"]
+  }
+]

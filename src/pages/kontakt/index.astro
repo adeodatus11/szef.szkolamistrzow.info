@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const contactCards = [
+  { label: "E-mail szkoły", value: "sekretariat.zsz5@wroclawskaedukacja.pl", href: "mailto:sekretariat.zsz5@wroclawskaedukacja.pl" },
+  { label: "Telefon główny", value: "+48 71 798 69 34", href: "tel:+48717986934" },
+  { label: "Adres", value: "ul. Jana Władysława Dawida 5, 50-527 Wrocław" },
+  { label: "Elektroniczna Skrzynka Podawcza ePUAP", value: "/ZSZnr5Wroclaw/SkrytkaESP" },
+  { label: "Adres e-doręczeń", value: "AE:PL-91269-72541-SHSGE-19" },
+  { label: "Administrator strony EduPage", value: "admin@zsz5.edupage.org", href: "mailto:admin@zsz5.edupage.org" }
+];
+---
+
+<BaseLayout
+  currentPath="/kontakt/"
+  title="Kontakt - Strefa Pracodawcy"
+  description="Dane kontaktowe Zespołu Szkół Zawodowych nr 5 we Wrocławiu dla pracodawców: e-mail, telefon, adres, ePUAP, e-doręczenia i KSeF."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner">
+        <span class="eyebrow">Kontakt</span>
+        <h1>Kontakt ze szkołą</h1>
+        <p class="muted">Dane kontaktowe na podstawie oficjalnej zakładki kontaktowej EduPage Zespołu Szkół Zawodowych nr 5 we Wrocławiu.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="contacts-grid">
+          {contactCards.map((item) => (
+            <article class="card">
+              <span class="tag">{item.label}</span>
+              {item.href ? <a class="contact-value" href={item.href}>{item.value}</a> : <strong class="contact-value">{item.value}</strong>}
+            </article>
+          ))}
+        </div>
+        <div class="panel page-note">
+          <h2>Zasady wystawiania faktur (KSeF)</h2>
+          <p><strong>Nabywca:</strong> Gmina Wrocław, NIP 897 13 83 551, pl. Nowy Targ 1-8, 50-141 Wrocław.</p>
+          <p><strong>Podmiot inny:</strong> Zespół Szkół Zawodowych nr 5, NIP 899 10 81 451, ul. Jana Władysława Dawida 5, 50-527 Wrocław.</p>
+          <p class="muted">Na fakturze należy podać dwa numery NIP oraz numer umowy lub zamówienia. Zasady dotyczą faktur wystawianych za pośrednictwem KSeF od 1 lutego 2026 r.</p>
+        </div>
+        <p class="source-note">Źródło: <a href="https://zsz5.edupage.org/contact/">zsz5.edupage.org/contact</a></p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

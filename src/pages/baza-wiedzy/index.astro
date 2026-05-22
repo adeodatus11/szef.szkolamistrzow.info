@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import knowledge from "../../data/knowledge.json";
+import sources from "../../data/sources.json";
+
+const sourceMap = new Map(sources.map((source) => [source.id, source]));
+---
+
+<BaseLayout
+  currentPath="/baza-wiedzy/"
+  title="Baza wiedzy dla pracodawców - Szkoła Mistrzów"
+  description="Baza wiedzy dla pracodawców o zatrudnianiu pracowników młodocianych, przygotowaniu zawodowym, czasie pracy, urlopach, BHP i obowiązkach stron."
+>
+  <main>
+    <section class="section page-hero">
+      <div class="section-inner narrow">
+        <span class="eyebrow">Baza wiedzy</span>
+        <h1>Pracownik młodociany i przygotowanie zawodowe</h1>
+        <p class="muted">Materiał informacyjny dla pracodawców, opiekunów praktycznej nauki zawodu i osób współpracujących ze szkołą. Oparty na źródłach oficjalnych: PIP, gov.pl, ELI/akty prawne, OHP i ORE.</p>
+        <p class="notice">To nie jest porada prawna. Przed zawarciem umowy należy sprawdzić aktualne przepisy i sytuację konkretnego pracodawcy, ucznia oraz stanowiska pracy.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="knowledge-grid">
+          {knowledge.map((item) => (
+            <article class="card">
+              <span class="tag">{item.category}</span>
+              <h2>{item.title}</h2>
+              <p class="muted">{item.summary}</p>
+              <div class="source-list">
+                {item.sourceIds.map((id) => {
+                  const source = sourceMap.get(id);
+                  return source && <a href={source.url}>{source.name}</a>;
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section logo-strip">
+      <div class="section-inner">
+        <span class="eyebrow">Źródła</span>
+        <h2>Oficjalne materiały do dalszej weryfikacji</h2>
+        <div class="source-grid">
+          {sources.map((source) => (
+            <a class="card link-card" href={source.url}>
+              <h3>{source.name}</h3>
+              <p class="muted">{source.url}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

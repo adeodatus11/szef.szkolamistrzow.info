@@ -7,7 +7,7 @@ import knowledge from "../data/knowledge.json";
 import resources from "../data/resources.json";
 
 const {
-  title = "Strefa Pracodawcy - Szkoła Mistrzów",
+  title = "Strefa Pracodawcy ZSZ5 Wrocław - młodociani",
   description = "Komunikaty, kalendarz, dokumenty i baza wiedzy dla pracodawców współpracujących ze Szkołą Mistrzów.",
   currentPath = "/"
 } = Astro.props;
@@ -26,6 +26,14 @@ const navItems = [
   { href: "/zrodla/", label: "Źródła" },
   { href: "/kontakt/", label: "Kontakt" }
 ];
+
+const currentPage = navItems.find((item) => item.href === currentPath);
+const breadcrumbItems = currentPath === "/" || !currentPage
+  ? []
+  : [
+      { name: "Start", item: new URL("/", Astro.site ?? "https://szef.szkolamistrzow.info").toString() },
+      { name: currentPage.label, item: new URL(currentPage.href, Astro.site ?? "https://szef.szkolamistrzow.info").toString() }
+    ];
 
 const searchItems = [
   { title: "Start", text: "Pulpit pracodawcy, terminy i szybki dostęp.", url: "/", type: "strona" },
@@ -57,6 +65,29 @@ const organizationSchema = {
   email: "sekretariat.zsz5@wroclawskaedukacja.pl",
   telephone: "+48 71 798 69 34"
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Strefa Pracodawcy ZSZ5 Wrocław",
+  url: "https://szef.szkolamistrzow.info",
+  inLanguage: "pl-PL"
+};
+
+const breadcrumbSchema = breadcrumbItems.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: item.item
+      }))
+    }
+  : null;
+
+const structuredData = breadcrumbSchema ? [organizationSchema, websiteSchema, breadcrumbSchema] : [organizationSchema, websiteSchema];
 ---
 
 <!doctype html>
@@ -90,7 +121,7 @@ const organizationSchema = {
         document.documentElement.classList.add("dark-mode");
       }
     </script>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
   <body>
     <header class="site-header">
@@ -214,9 +245,17 @@ const organizationSchema = {
 
         matches.forEach((item) => {
           const link = document.createElement("a");
+          const tag = document.createElement("span");
+          const title = document.createElement("strong");
+          const text = document.createElement("span");
+
           link.className = "search-result";
           link.href = item.url;
-          link.innerHTML = `<span class="tag">${item.type}</span><strong>${item.title}</strong><span>${item.text}</span>`;
+          tag.className = "tag";
+          tag.textContent = item.type;
+          title.textContent = item.title;
+          text.textContent = item.text;
+          link.append(tag, title, text);
           searchResults.append(link);
         });
       }

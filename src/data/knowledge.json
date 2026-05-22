@@ -8,13 +8,13 @@
   {
     "title": "Kiedy można zatrudnić młodocianego w celu przygotowania zawodowego?",
     "category": "umowa",
-    "summary": "Młodociany bez kwalifikacji zawodowych może być zatrudniony tylko w celu przygotowania zawodowego. Wymagane jest co najmniej ukończenie ośmioletniej szkoły podstawowej oraz zaświadczenie lekarskie, że praca danego rodzaju nie zagraża zdrowiu.",
+    "summary": "Młodociany nieposiadający kwalifikacji zawodowych może być zatrudniony w celu przygotowania zawodowego. Od tego należy odróżnić zatrudnienie młodocianych przy pracach lekkich, które ma odrębne ograniczenia. Wymagane jest co najmniej ukończenie ośmioletniej szkoły podstawowej oraz zaświadczenie lekarskie, że praca danego rodzaju nie zagraża zdrowiu.",
     "sourceIds": ["pip-zatrudnianie", "men-nauka-zawodu"]
   },
   {
     "title": "Co musi zawierać umowa?",
     "category": "umowa",
-    "summary": "Umowa o pracę w celu przygotowania zawodowego powinna być pisemna i wskazywać m.in. rodzaj przygotowania zawodowego, czas i miejsce odbywania przygotowania, sposób dokształcania teoretycznego oraz wynagrodzenie.",
+    "summary": "Umowa o pracę w celu przygotowania zawodowego powinna być pisemna i wskazywać m.in. rodzaj przygotowania zawodowego, czas i miejsce odbywania przygotowania, sposób dokształcania teoretycznego oraz wynagrodzenie. Co do zasady stosuje się do niej przepisy o umowie na czas nieokreślony; czas przygotowania zawodowego określa okres nauki, a nie samodzielny typ umowy terminowej.",
     "sourceIds": ["pip-zatrudnianie", "rozporzadzenie-przygotowanie"]
   },
   {
@@ -38,13 +38,13 @@
   {
     "title": "Prace wzbronione i stanowisko pracy",
     "category": "bhp",
-    "summary": "Młodocianych nie wolno zatrudniać przy pracach wzbronionych. Wyjątki dotyczą tylko prac potrzebnych do przygotowania zawodowego, w zakresie dopuszczonym przepisami i przy szczególnej ochronie zdrowia.",
+    "summary": "Młodocianych nie wolno zatrudniać przy pracach wzbronionych. Wyjątki dotyczą wyłącznie prac wymienionych w przepisach jako dopuszczalne dla młodocianych powyżej 16 lat w celu przygotowania zawodowego, przy szczególnej ochronie zdrowia, nadzorze i bez stałego charakteru takiej pracy.",
     "sourceIds": ["pip-ochrona", "prace-wzbronione"]
   },
   {
     "title": "Wynagrodzenie młodocianego",
     "category": "wynagrodzenie",
-    "summary": "Minimalne wynagrodzenie w przygotowaniu zawodowym jest określane procentowo od przeciętnego miesięcznego wynagrodzenia w gospodarce narodowej w poprzednim kwartale: co najmniej 8%, 9% i 10% odpowiednio w kolejnych latach nauki; przy przyuczeniu co najmniej 7%.",
+    "summary": "Minimalne wynagrodzenie w przygotowaniu zawodowym jest określane procentowo od przeciętnego miesięcznego wynagrodzenia w gospodarce narodowej w poprzednim kwartale: co najmniej 8%, 9% i 10% odpowiednio w kolejnych latach nauki; przy przyuczeniu co najmniej 7%. Nowe stawki stosuje się po ogłoszeniu przeciętnego wynagrodzenia przez Prezesa GUS zgodnie z mechanizmem wskazanym w przepisach.",
     "sourceIds": ["rozporzadzenie-przygotowanie", "pip-zatrudnianie"]
   },
   {
@@ -56,7 +56,7 @@
   {
     "title": "Refundacja i dofinansowanie",
     "category": "finanse",
-    "summary": "Refundacja wynagrodzeń i składek oraz dofinansowanie kosztów kształcenia są warunkowe. Wymagają spełnienia kryteriów, terminowego złożenia wniosków, dokumentów i często rozliczenia pomocy de minimis.",
+    "summary": "Refundacja OHP wynagrodzeń i składek wymaga m.in. dokumentów dotyczących pomocy de minimis oraz spełnienia warunków wskazanych przez OHP. Dofinansowanie kosztów kształcenia przez gminę jest odrębną procedurą, z własnymi terminami i wymaganiami.",
     "sourceIds": ["ohp-refundacja", "samorzad-dofinansowanie"]
   }
 ]

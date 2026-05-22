@@ -1,20 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import contacts from "../../data/contacts.json";
 
-const contactCards = [
-  { label: "Kierownik szkolenia praktycznego", value: "Arkadiusz Mocarski", detail: "691 615 270", href: "tel:+48691615270" },
-  { label: "E-mail szkoły", value: "sekretariat.zsz5@wroclawskaedukacja.pl", href: "mailto:sekretariat.zsz5@wroclawskaedukacja.pl" },
-  { label: "Telefon główny", value: "+48 71 798 69 34", href: "tel:+48717986934" },
+const officeCards = [
   { label: "Adres", value: "ul. Jana Władysława Dawida 5, 50-527 Wrocław" },
   { label: "Elektroniczna Skrzynka Podawcza ePUAP", value: "/ZSZnr5Wroclaw/SkrytkaESP" },
-  { label: "Adres e-doręczeń", value: "AE:PL-91269-72541-SHSGE-19" },
-  { label: "Administrator strony EduPage", value: "admin@zsz5.edupage.org", href: "mailto:admin@zsz5.edupage.org" }
+  { label: "Adres e-doręczeń", value: "AE:PL-91269-72541-SHSGE-19" }
 ];
 ---
 
 <BaseLayout
   currentPath="/kontakt/"
-  title="Kontakt - Strefa Pracodawcy"
+  title="Kontakt dla pracodawców - ZSZ5 Wrocław"
   description="Dane kontaktowe Zespołu Szkół Zawodowych nr 5 we Wrocławiu dla pracodawców: e-mail, telefon, adres, ePUAP, e-doręczenia i KSeF."
 >
   <main>
@@ -28,11 +25,19 @@ const contactCards = [
     <section class="section">
       <div class="section-inner">
         <div class="contacts-grid">
-          {contactCards.map((item) => (
+          {contacts.map((item) => (
+            <article class="card">
+              <span class="tag">{item.role}</span>
+              <strong class="contact-value">{item.name}</strong>
+              {item.phone && <a href={item.phoneHref}>{item.phone}</a>}
+              {item.email && <a href={item.emailHref}>{item.email}</a>}
+              <span class="muted">{item.note}</span>
+            </article>
+          ))}
+          {officeCards.map((item) => (
             <article class="card">
               <span class="tag">{item.label}</span>
-              {item.href ? <a class="contact-value" href={item.href}>{item.value}</a> : <strong class="contact-value">{item.value}</strong>}
-              {item.detail && <span class="muted">{item.detail}</span>}
+              <strong class="contact-value">{item.value}</strong>
             </article>
           ))}
         </div>

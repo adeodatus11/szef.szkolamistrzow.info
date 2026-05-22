@@ -1,26 +1,28 @@
 [
   {
+    "name": "Arkadiusz Mocarski",
+    "role": "kierownik szkolenia praktycznego",
+    "group": "pracodawcy",
+    "phone": "691 615 270",
+    "phoneHref": "tel:+48691615270",
+    "note": "Główny kontakt dla pracodawców w sprawach praktycznej nauki zawodu."
+  },
+  {
     "name": "Sekretariat ZSZ nr 5",
     "role": "pierwszy kontakt",
-    "group": "sprawy ogolne",
-    "email": "sekretariat@zsz5.wroc.pl",
-    "phone": "+48 71 798 69 16",
-    "note": "Przekierowanie spraw do wychowawcow, koordynatorow i dyrekcji."
+    "group": "sprawy ogólne",
+    "email": "sekretariat.zsz5@wroclawskaedukacja.pl",
+    "emailHref": "mailto:sekretariat.zsz5@wroclawskaedukacja.pl",
+    "phone": "+48 71 798 69 34",
+    "phoneHref": "tel:+48717986934",
+    "note": "Przekierowanie spraw do właściwych osób w szkole."
   },
   {
-    "name": "Koordynator praktycznej nauki zawodu",
-    "role": "umowy i organizacja praktyk",
-    "group": "pracodawcy",
-    "email": "praktyki@zsz5.wroc.pl",
-    "phone": "+48 71 798 69 16",
-    "note": "Konsultacje dotyczace umow, zalacznikow, terminow i dokumentacji."
-  },
-  {
-    "name": "Wychowawcy klas branzowych",
-    "role": "kontakt klasowy",
-    "group": "klasy",
-    "email": "sekretariat@zsz5.wroc.pl",
-    "phone": "+48 71 798 69 16",
-    "note": "Lista wychowawcow moze byc aktualizowana w tym pliku po zatwierdzeniu organizacji roku."
+    "name": "Administrator strony EduPage",
+    "role": "sprawy techniczne EduPage",
+    "group": "system",
+    "email": "admin@zsz5.edupage.org",
+    "emailHref": "mailto:admin@zsz5.edupage.org",
+    "note": "Kontakt techniczny do strony EduPage."
   }
 ]

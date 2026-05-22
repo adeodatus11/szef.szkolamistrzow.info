@@ -5,7 +5,9 @@ import events from "../../data/events.json";
 const sortedEvents = [...events].sort((a, b) => a.date.localeCompare(b.date));
 const eventTypes = [...new Set(events.map((event) => event.type))];
 const calendarMonths = [...new Set(sortedEvents.map((event) => event.date.slice(0, 7)))].sort();
-const defaultCalendarMonth = "2026-05";
+const today = new Date().toISOString().slice(0, 10);
+const nearestEvent = sortedEvents.find((event) => (event.endDate ?? event.date) >= today) ?? sortedEvents.at(-1);
+const defaultCalendarMonth = nearestEvent?.date.slice(0, 7) ?? calendarMonths.at(-1) ?? "2026-05";
 const formatDate = (value: string) => new Intl.DateTimeFormat("pl-PL", { day: "2-digit", month: "short" }).format(new Date(value));
 const formatRange = (event: { date: string; endDate?: string }) => event.endDate ? `${formatDate(event.date)} - ${formatDate(event.endDate)}` : formatDate(event.date);
 const formatMonth = (value: string) => {
@@ -163,7 +165,17 @@ const formatMonth = (value: string) => {
         const dayEvents = monthEvents.filter((event) => dateInRange(dateKey, event.date, event.endDate || event.date));
         const dayCell = document.createElement("div");
         dayCell.className = `day ${dayEvents.length ? "has-event" : ""}`;
-        if (dayEvents.length) dayCell.dataset.eventType = dayEvents[0].type;
+        if (dayEvents.length) {
+          const primaryEvent = dayEvents[0];
+          dayCell.dataset.eventType = primaryEvent.type;
+          dayCell.dataset.eventTitle = primaryEvent.title;
+          dayCell.dataset.eventDate = formatEventRange(primaryEvent);
+          dayCell.dataset.eventAudience = primaryEvent.audience;
+          dayCell.dataset.eventDescription = primaryEvent.description;
+          dayCell.tabIndex = 0;
+          dayCell.setAttribute("role", "button");
+          dayCell.setAttribute("aria-label", `${dateKey}: ${primaryEvent.title}`);
+        }
         const dayNumber = document.createElement("span");
         dayNumber.className = "day-number";
         dayNumber.textContent = String(day);
@@ -204,13 +216,13 @@ const formatMonth = (value: string) => {
       eventModalAudience.textContent = trigger.dataset.eventAudience || "";
       eventModalDescription.textContent = trigger.dataset.eventDescription || "";
       eventModal.hidden = false;
-      document.body.classList.add("search-open");
+      document.body.classList.add("modal-open");
       eventModalClose?.focus();
     }
 
     function closeEventModal() {
       eventModal.hidden = true;
-      document.body.classList.remove("search-open");
+      document.body.classList.remove("modal-open");
     }
 
     monthFilter?.addEventListener("change", () => {
@@ -219,9 +231,15 @@ const formatMonth = (value: string) => {
     });
     eventFilter?.addEventListener("change", filterEvents);
     document.addEventListener("click", (event) => {
-      const trigger = event.target.closest(".day-event, .event-list-button");
+      const trigger = event.target.closest(".day-event, .event-list-button, .day.has-event");
       if (trigger) openEventModal(trigger);
       if (event.target === eventModal) closeEventModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if ((event.key === "Enter" || event.key === " ") && event.target.matches?.(".day.has-event")) {
+        event.preventDefault();
+        openEventModal(event.target);
+      }
     });
     eventModalClose?.addEventListener("click", closeEventModal);
     document.addEventListener("keydown", (event) => {

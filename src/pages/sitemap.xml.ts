@@ -9,12 +9,13 @@ const pages = [
   "zrodla/",
   "kontakt/"
 ];
+const lastmod = "2026-05-22";
 
 export function GET() {
   const base = "https://szef.szkolamistrzow.info/";
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((page) => `  <url><loc>${base}${page}</loc></url>`).join("\n")}
+${pages.map((page) => `  <url><loc>${base}${page}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq></url>`).join("\n")}
 </urlset>`;
 
   return new Response(body, {

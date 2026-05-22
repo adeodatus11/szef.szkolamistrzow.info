@@ -5,6 +5,7 @@ type DocumentItem = {
   schoolYear: string;
   trade: string;
   updated: string;
+  added?: string;
   url: string;
 };
 
@@ -20,7 +21,7 @@ const { documents } = Astro.props as { documents: DocumentItem[] };
       </div>
       <span class="tag">{doc.category}</span>
       <span class="muted">{doc.schoolYear}</span>
-      <span class="muted">Aktualizacja: {doc.updated}</span>
+      <span class="muted">Dodano: {doc.added ?? doc.updated}</span>
       <a class="button secondary" href={doc.url}>Pobierz</a>
     </article>
   ))}

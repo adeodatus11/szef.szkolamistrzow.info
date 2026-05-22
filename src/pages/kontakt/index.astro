@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const contactCards = [
+  { label: "Kierownik szkolenia praktycznego", value: "Arkadiusz Mocarski", detail: "691 615 270", href: "tel:+48691615270" },
   { label: "E-mail szkoły", value: "sekretariat.zsz5@wroclawskaedukacja.pl", href: "mailto:sekretariat.zsz5@wroclawskaedukacja.pl" },
   { label: "Telefon główny", value: "+48 71 798 69 34", href: "tel:+48717986934" },
   { label: "Adres", value: "ul. Jana Władysława Dawida 5, 50-527 Wrocław" },
@@ -31,6 +32,7 @@ const contactCards = [
             <article class="card">
               <span class="tag">{item.label}</span>
               {item.href ? <a class="contact-value" href={item.href}>{item.value}</a> : <strong class="contact-value">{item.value}</strong>}
+              {item.detail && <span class="muted">{item.detail}</span>}
             </article>
           ))}
         </div>

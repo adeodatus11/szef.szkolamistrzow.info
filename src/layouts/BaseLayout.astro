@@ -13,7 +13,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://szef.szkolamistrzow.info").toString();
-const socialImageUrl = new URL("/assets/logos/orzel.png", Astro.site ?? "https://szef.szkolamistrzow.info").toString();
+const logoUrl = new URL("/assets/logos/logotyp-szef.png", Astro.site ?? "https://szef.szkolamistrzow.info").toString();
 
 const navItems = [
   { href: "/", label: "Start" },
@@ -54,7 +54,7 @@ const organizationSchema = {
   "@type": "EducationalOrganization",
   name: "Zespół Szkół Zawodowych nr 5 we Wrocławiu - Szkoła Mistrzów",
   url: "https://szef.szkolamistrzow.info",
-  logo: "https://szef.szkolamistrzow.info/assets/logos/orzel.png",
+  logo: "https://szef.szkolamistrzow.info/assets/logos/logotyp-szef.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "ul. Jana Władysława Dawida 5",
@@ -106,7 +106,7 @@ const structuredData = breadcrumbSchema ? [organizationSchema, websiteSchema, br
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image" content={logoUrl} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -126,11 +126,7 @@ const structuredData = breadcrumbSchema ? [organizationSchema, websiteSchema, br
   <body>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Strefa Pracodawcy - start">
-        <img class="brand-logo" src="/assets/logos/orzel.png" alt="Godło Szkoły Mistrzów" />
-        <span>
-          <span class="brand-kicker">Szkoła Mistrzów</span>
-          <span class="brand-name">Strefa Pracodawcy</span>
-        </span>
+        <img class="brand-logo" src="/assets/logos/logotyp-szef.png" alt="Logo SZEF szkolamistrzow.info" />
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Nawigacja główna">
         {navItems.map((item) => (

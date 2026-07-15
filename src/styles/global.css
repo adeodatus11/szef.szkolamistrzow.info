@@ -105,13 +105,13 @@ select {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  min-width: 190px;
+  min-width: 210px;
   color: var(--heading-color);
 }
 
 .brand-logo {
-  width: 86px;
-  height: 68px;
+  width: 190px;
+  height: 74px;
   object-fit: contain;
 }
 
@@ -1055,8 +1055,8 @@ p {
   }
 
   .brand-logo {
-    width: 74px;
-    height: 58px;
+    width: 132px;
+    height: 56px;
   }
 
   .search-trigger {

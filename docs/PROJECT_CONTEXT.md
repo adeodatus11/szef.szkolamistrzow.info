@@ -33,7 +33,7 @@ Strona ma skracać drogę do czterech rzeczy:
 
 ## Branding
 
-Header używa znaku ZSZ5 z napisem `ZSZ5 we Wrocławiu`.
+Header używa pliku `public/assets/logos/logotyp-szef.png`, czyli logotypu `szef. szkolamistrzow.info`.
 
 Stopka musi zawierać:
 
